@@ -13,6 +13,8 @@
 
 # misc
 .idea
+.vscode
+.settings
 .DS_Store
 .env.local
 .env.development.local

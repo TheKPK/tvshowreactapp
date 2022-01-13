@@ -20,6 +20,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+img{
+  width: 220px;
+  height: 295px;
+}
 
 /* utils */
 .btn {
@@ -119,4 +123,37 @@ body {
 .alert-info {
   background: var(--info-light);
   border: 1px solid var(--info-dark);
+}
+
+/*list style item*/
+.listitem{
+  text-decoration: none;
+  width: 210px;
+  background: var(--offwhite-color);
+  box-shadow: 0 0 1px 1px rgba(20,23,28,0.1),0 3px 1px 0 rgba(20,23,28,0.1);
+  margin: 1rem auto;
+  cursor: pointer;
+  display: inline-block;
+}
+.listitem:hover{
+  transform: scale(1.03);
+}
+.listitem__info{
+  color: var(--dark-color);
+  text-align: center;
+}
+
+.listitem__name{
+  font-size: 1rem;
+  padding: 5px;
+
+}
+.info__rating{
+  color: var(--light-green);
+  padding: 5px;
+}
+/*Home page Styles*/
+.homepage__list{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
 }

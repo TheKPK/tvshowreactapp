@@ -13,23 +13,24 @@ const ShowsState = (props) => {
 
   const [state, dispatch] = useReducer(ShowsReducer, initialState);
 
-  const seacrchShows = async () => {
+  const searchShows = async (searchTerm) => {
     dispatch({type: SET_LOADING});
-    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=blinders`);
-    console.log(response)
+    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
+    const {data} = response;
+    // console.log(data);
     dispatch({
-      type:SEARCH_SHOWS,
-      payload:response
+      type: SEARCH_SHOWS,
+      payload: data
     })
   }
-
 
   return (
     <ShowsContext.Provider
       value={{
         shows: state.shows,
         singleShow: state.singleShow,
-        loading: state.loading, seacrchShows
+        loading: state.loading,
+        searchShows
       }}
     >
       {props.children}
