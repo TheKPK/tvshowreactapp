@@ -1,13 +1,8 @@
-import { useReducer } from "react";
+import {useReducer} from "react";
 import axios from "axios";
 import ShowsContext from "./showsContext";
 import ShowsReducer from "./showsReducer";
-import {
-  SEARCH_SHOWS,
-  SET_LOADING,
-  SET_SINGLE_SHOWS,
-  CLEAR_SINGLE_SHOWS,
-} from "../types";
+import {SEARCH_SHOWS, SET_LOADING,} from "../types";
 
 const ShowsState = (props) => {
   const initialState = {
@@ -18,9 +13,15 @@ const ShowsState = (props) => {
 
   const [state, dispatch] = useReducer(ShowsReducer, initialState);
 
-const seacrchShows=async()=>{
-    dispatch({type:SET_LOADING});
-}
+  const seacrchShows = async () => {
+    dispatch({type: SET_LOADING});
+    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=blinders`);
+    console.log(response)
+    dispatch({
+      type:SEARCH_SHOWS,
+      payload:response
+    })
+  }
 
 
   return (
@@ -28,7 +29,7 @@ const seacrchShows=async()=>{
       value={{
         shows: state.shows,
         singleShow: state.singleShow,
-        loading: state.loading,
+        loading: state.loading, seacrchShows
       }}
     >
       {props.children}
