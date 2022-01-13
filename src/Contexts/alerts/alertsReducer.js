@@ -1,7 +1,6 @@
 import {REMOVE_ALERT, SET_ALERT} from '../types'
 
 const alertsReducer = (state, action) => {
-  console.log(state)
   switch (action.type) {
     case SET_ALERT:
       return action.payload;
