@@ -1,0 +1,9 @@
+// Shows
+export const SEARCH_SHOWS="SEARCH_SHOWS";
+export const SET_LOADING="SET_LOADING";
+export const SET_SINGLE_SHOWS="SET_SINGLE_SHOWS";
+export const CLEAR_SINGLE_SHOWS="CLEAR_SINGLE_SHOWS";
+
+// ALERTS
+export const SET_ALERT="SET_ALERT";
+export const REMOVE_ALERT="REMOVE_ALERT";
